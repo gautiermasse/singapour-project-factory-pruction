@@ -1,5 +1,4 @@
-package com.example.singapourprojectkafka.config;
-
+package com.example.singapourprojectkafka.producer;
 
 // Importing required classes
 import java.util.HashMap;
@@ -26,7 +25,7 @@ public class KafkaConfig {
 
         // Adding the Configuration
         config.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG,
-                "127.0.0.1:29092");
+                "127.0.0.1:39092");
         config.put(ConsumerConfig.GROUP_ID_CONFIG,
                 "group_id");
         config.put(
@@ -39,16 +38,5 @@ public class KafkaConfig {
         return new DefaultKafkaConsumerFactory<>(config);
     }
 
-
     // Creating a Listener
-    @Bean
-    public ConcurrentKafkaListenerContainerFactory
-    concurrentKafkaListenerContainerFactory()
-    {
-        ConcurrentKafkaListenerContainerFactory<
-                String, String> factory
-                = new ConcurrentKafkaListenerContainerFactory<>();
-        factory.setConsumerFactory(consumerFactory());
-        return factory;
-    }
 }
