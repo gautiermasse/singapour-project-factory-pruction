@@ -41,12 +41,10 @@ public class SingapourProjectKafkaApplication {
             ProducerRecord<String, String> record = new ProducerRecord<>(topic, key, value);
             producer.send(record);
             try {
-                Thread.sleep(3000); // Mettre le thread en pause pendant 5 secondes
+                Thread.sleep(300); // Mettre le thread en pause pendant 5 secondes
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
-
     }
-
 }
